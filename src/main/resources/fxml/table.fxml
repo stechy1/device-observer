@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.device_observer.controller.TableController">
+   <TableView fx:id="table" editable="true">
+      <columns>
+         <TableColumn fx:id="columnName" editable="true" prefWidth="75.0" text="Device name" />
+         <TableColumn fx:id="columnTotalMessages" editable="false" prefWidth="75.0" text="Total messages" />
+         <TableColumn fx:id="columnToggleView" prefWidth="75.0" resizable="false" sortable="false" text="Toggle view" />
+      </columns>
+   </TableView>
+   
+   <VBox>
+      <Button fx:id="btnAddDevice" text="+" onAction="#handleAddDevice"/>
+      <Button fx:id="btnRemoveDevice" text="-" onAction="#handleRemoveDevice"/>
+   </VBox>
+</HBox>

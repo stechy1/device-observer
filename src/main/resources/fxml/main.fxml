@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.device_observer.controller.MainController"
+            prefHeight="400.0" prefWidth="600.0">
+  <center>
+    <LineChart fx:id="chart" title="Active devices">
+      <xAxis>
+        <NumberAxis fx:id="xAxis" label="Message ID" forceZeroInRange="false"/>
+      </xAxis>
+      <yAxis>
+        <NumberAxis fx:id="yAxis" label="Data value"/>
+      </yAxis>
+    </LineChart>
+  </center>
+  
+  <bottom>
+    <HBox alignment="CENTER" spacing="16">
+      <Button fx:id="btnStart" text="Start" onAction="#handleStart"/>
+      <Button fx:id="btnStop" text="Stop" onAction="#handleStop"/>
+
+      <padding>
+        <Insets left="4.0" right="4.0" bottom="2.0"/>
+      </padding>
+    </HBox>
+  </bottom>
+  
+  <right>
+    <fx:include fx:id="table" source="table.fxml"/>
+  </right>
+</BorderPane>
